@@ -11,7 +11,7 @@ export default function AddTaskScreen() {
 
   async function inserirTask() {
     try {
-      const taskRef = collection(db, "Tasks");
+      
       const payload = {
         Title: title,
         Content: content,
