@@ -10,23 +10,23 @@ const Tabs = createMaterialBottomTabNavigator();
 export default function RootNavigation() {
   return (
     <NavigationContainer>
-         <Tabs.Navigator>
-      <Tabs.Screen
-        name="HomeScreen"
-        component={HomeScreen}
-        options={{ headerShown: false, tabBarLabel: "Home" }}
-      />
-      <Tabs.Screen
-        name="AddTaskScreen"
-        component={AddTaskScreen}
-        options={{ headerShown: false, tabBarLabel: "Adicionar Task" }}
-      />
-      <Tabs.Screen
-        name="EditarTaskScreen"
-        component={EditarTaskScreen}
-        options={{ headerShown: false, tabBarLabel: "Editar Task" }}
-      />
-        </Tabs.Navigator>
-    </NavigationContainer> 
+      <Tabs.Navigator>
+        <Tabs.Screen
+          name="AddTaskScreen"
+          component={AddTaskScreen}
+          options={{ headerShown: false, tabBarLabel: "Adicionar Task" }}
+        />
+        <Tabs.Screen
+          name="HomeScreen"
+          component={HomeScreen}
+          options={{ headerShown: false, tabBarLabel: "Home" }}
+        />
+        <Tabs.Screen
+          name="EditarTaskScreen"
+          component={EditarTaskScreen}
+          options={{ headerShown: false, tabBarLabel: "Editar Task" }}
+        />
+      </Tabs.Navigator>
+    </NavigationContainer>
   );
 }

@@ -1,6 +1,5 @@
 import { View } from "react-native";
-import { Text } from "react-native-paper";
-import MyComponent from "./cardTeste";
+import MyComponent from "./CardTeste";
 
 export default function HomeScreen() {
     return (

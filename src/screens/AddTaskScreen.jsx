@@ -1,10 +1,21 @@
 import { View } from "react-native";
-import { Text } from "react-native-paper";
+import { Button, TextInput } from "react-native-paper";
 
 export default function AddTaskScreen() {
     return (
         <View>
-            <Text>Task.</Text>
+            <View>
+                <TextInput
+                    placeholder="Title"
+                />
+                <TextInput
+                    placeholder="Content"
+                />
+
+                <Button
+                    mode="contained"
+                >Adicionar Task</Button>
+            </View>
         </View>      
     )
 }
