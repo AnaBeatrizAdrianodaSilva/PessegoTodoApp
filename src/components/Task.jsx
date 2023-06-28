@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Avatar, Button, Card, Text } from 'react-native-paper';
+import { Avatar, Button, Card, Text } from "react-native-paper";
 import { db } from "../config/firebase";
 import { collection, getDocs } from "firebase/firestore";
 import { View } from "react-native-web";
 
-const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
+const LeftContent = (props) => <Avatar.Icon {...props} icon="folder" />;
 
-const Task = () => {
+const Task = ({ navigation }) => {
   const [tasks, setTasks] = React.useState([]);
 
   useEffect(() => {
@@ -28,15 +28,23 @@ const Task = () => {
       {tasks.map((task) => (
         <Card key={task.id}>
           <Card.Content>
-          <Text variant="titleLarge">{task.Title}</Text>
-          <Text variant="bodyMedium">{task.Content}</Text>
+            <Text variant="titleLarge">{task.Title}</Text>
+            <Text variant="bodyMedium">{task.Content}</Text>
           </Card.Content>
+          <Card.Actions>
+            <Button
+              onPress={() => {
+                navigation.navigate("");
+              }}
+            >
+              Editar
+            </Button>
+          </Card.Actions>
         </Card>
       ))}
     </View>
   );
-    
-   
+
   // <Card>
   //   <Card.Title title="Card Title" subtitle="Card Subtitle" left={LeftContent} />
   //   <Card.Content>
@@ -49,6 +57,6 @@ const Task = () => {
   //     <Button>Ok</Button>
   //   </Card.Actions>
   // </Card>
-      };
+};
 
 export default Task;
