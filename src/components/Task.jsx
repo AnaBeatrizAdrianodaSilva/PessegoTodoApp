@@ -26,13 +26,18 @@ const Task = ({ navigation }) => {
   return (
     <View>
       {tasks.map((task) => (
-        <Card key={task.id}>
-          <Card.Content>
-            <Text variant="titleLarge">{task.Title}</Text>
-            <Text variant="bodyMedium">{task.Content}</Text>
+        <Card key={task.id}
+          style={{backgroundColor:'#8A02F2', margin:10,}}
+        >
+          <Card.Content >
+            <Text style={{color:'#fff'}} variant="titleLarge">{task.Title}</Text>
+            <Text style={{color:'#fff'}} variant="bodyMedium">{task.Content}</Text>
           </Card.Content>
           <Card.Actions>
             <Button
+            mode="contained"
+            buttonColor="#fff"
+            textColor="#8A02F2"
               onPress={() => {
                 navigation.navigate("");
               }}

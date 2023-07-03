@@ -23,15 +23,19 @@ export default function AddTaskScreen() {
     }
   }
 
+  const taskRef = collection(db, "Tasks");
+
   return (
     <View>
-      <View>
-        <TextInput label="Titulo" value={title} onChangeText={setTitle} />
-        <TextInput label="Descrição" value={content} onChangeText={setContent} />
+      <View style={{justifyContent:'center', alignItems:'center'}}>
+        <View style={{width:500,height:300,backgroundColor:'#8202E6',marginTop:200,alignItems:'center',borderRadius:7}}>
+        <TextInput style={{width:300,height:50,borderRadius:7,marginTop:50}} label="Titulo" value={title} onChangeText={setTitle} />
+        <TextInput style={{width:300,height:50,borderRadius:7,marginTop:20,marginBottom:20}} label="Descrição" value={content} onChangeText={setContent} />
 
-        <Button mode="contained" onPress={inserirTask}>
+        <Button mode="contained" onPress={inserirTask} buttonColor="#5F02A6">
           Adicionar Task
         </Button>
+        </View>
       </View>
     </View>
   );
