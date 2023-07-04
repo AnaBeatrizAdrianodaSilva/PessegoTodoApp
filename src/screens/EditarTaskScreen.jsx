@@ -1,7 +1,7 @@
 import { View } from "react-native";
 import { Text } from "react-native-paper";
 
-export default function EditarTaskScreen() {
+export default function EditarTaskScreen({ navigation }) {
     return (
         <View>
             <Text>Editar Task.</Text>
