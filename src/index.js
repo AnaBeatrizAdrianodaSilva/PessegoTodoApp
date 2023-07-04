@@ -15,7 +15,7 @@ export default function RootNavigation() {
   return (
     <NavigationContainer>
       <Tabs.Navigator>
-        <Tabs.Screen component={MyStack} name="Home"/>
+        <Tabs.Screen component={MyStack} name="Home" options={{ headerShown: false, tabBarLabel: "Home" }} />
         <Tabs.Screen
           name="AddTaskScreen"
           component={AddTaskScreen}
