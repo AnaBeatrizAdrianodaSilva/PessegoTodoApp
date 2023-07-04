@@ -44,6 +44,16 @@ const Task = ({ navigation }) => {
             >
               Editar
             </Button>
+            <Button
+            mode="contained"
+            buttonColor="#f50000"
+            textColor="#fff"
+              onPress={() => {
+                navigation.navigate("");
+              }}
+            >
+              Deletar
+            </Button>
           </Card.Actions>
         </Card>
       ))}
