@@ -3,6 +3,7 @@ import { Avatar, Button, Card, Text } from "react-native-paper";
 import { db } from "../config/firebase";
 import { collection, getDocs } from "firebase/firestore";
 import { View } from "react-native-web";
+import { ScrollView } from "react-native";
 
 const LeftContent = (props) => <Avatar.Icon {...props} icon="folder" />;
 
@@ -24,6 +25,7 @@ const Task = ({ navigation }) => {
   }, []);
 
   return (
+  <ScrollView>
     <View>
       {tasks.map((task) => (
         <Card key={task.id}
@@ -38,9 +40,9 @@ const Task = ({ navigation }) => {
             mode="contained"
             buttonColor="#fff"
             textColor="#8A02F2"
-              onPress={() => {
-                navigation.navigate("");
-              }}
+            onPress={() => {
+              navigation.navigate("EditTask", { taskId: task.id });
+            }}
             >
               Editar
             </Button>
@@ -58,6 +60,7 @@ const Task = ({ navigation }) => {
         </Card>
       ))}
     </View>
+  </ScrollView>
   );
 
   // <Card>
