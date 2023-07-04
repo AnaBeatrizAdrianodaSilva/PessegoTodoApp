@@ -4,12 +4,13 @@ import { Button } from "react-native-paper";
 
 export default function HomeScreen({ navigation }) {
   return (
-    <ScrollView>
-      <View>
+    <ScrollView >
+      <View style={{alignItems:'center',justifyContent:'center',height:500,}}>
         <Button
+        style={{width:300}}
           mode="contained"
-          buttonColor="#fff"
-          textColor="#8A02F2"
+          buttonColor="#8A02F2"
+          textColor="#fff"
           onPress={() => {
             navigation.navigate("Task");
           }}

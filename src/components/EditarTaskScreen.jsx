@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Button, TextInput, View } from "react-native";
+import {  TextInput, View } from "react-native";
+import { Button,} from "react-native-paper"
 import { db } from "../config/firebase";
 import { doc, setDoc } from "firebase/firestore";
 
@@ -37,7 +38,7 @@ const EditTask = ({ navigation, route }) => {
   };
 
   return (
-    <View>
+    <View style={{alignItems:'center',width:300,height:300,backgroundColor:'#f408',borderRadius:7}}>
       <TextInput
         value={title}
         onChangeText={setTitle}
@@ -49,7 +50,13 @@ const EditTask = ({ navigation, route }) => {
         placeholder="Conteúdo da Tarefa"
         multiline
       />
-      <Button title="Salvar" onPress={handleSave} />
+      <Button
+      style={{width:150,marginTop:20}} 
+      mode="contained" 
+      onPress={handleSave} 
+      buttonColor="#8A02F2"
+      textColor="#fff"
+      > Salvar </Button>
     </View>
   );
 };
