@@ -3,7 +3,7 @@ import HomeScreen from "./screens/HomeScreen";
 import AddTaskScreen from "./screens/AddTaskScreen";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
-import EditarTaskScreen from "./components/EditarTaskScreen";
+
 import EditTask from "./components/EditarTaskScreen";
 import Task from "./components/Task";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
