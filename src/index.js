@@ -10,21 +10,35 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 const Tabs = createMaterialBottomTabNavigator();
 
-
 export default function RootNavigation() {
   return (
     <NavigationContainer>
-      <Tabs.Navigator>
-        <Tabs.Screen component={MyStack} name="Home" options={{ headerShown: false, tabBarLabel: "Home" }} />
+      <Tabs.Navigator
+        activeColor="white"
+        barStyle={{
+          backgroundColor: "#3A0166",
+        }}
+      >
+        <Tabs.Screen
+          component={MyStack}
+          name="Home"
+          options={{
+            tabBarColor: "#000",
+            headerShown: false,
+            tabBarLabel: "Home",
+          }}
+        />
         <Tabs.Screen
           name="AddTaskScreen"
           component={AddTaskScreen}
-          options={{ headerShown: false, tabBarLabel: "Adicionar Task" }}
+          options={{
+            tabBarColor: "#000",
+            headerShown: false,
+            tabBarLabel: "Adicionar Task",
+          }}
         />
-        
       </Tabs.Navigator>
     </NavigationContainer>
-    
   );
 }
 
@@ -32,7 +46,7 @@ const Stack = createNativeStackNavigator();
 
 function MyStack() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{headerStyle:{backgroundColor:'#3A0166',}}}>
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
       <Stack.Screen name="EditTask" component={EditTask} />
       <Stack.Screen name="AddTaskScreen" component={AddTaskScreen} />

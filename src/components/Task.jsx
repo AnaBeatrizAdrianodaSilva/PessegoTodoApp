@@ -4,6 +4,9 @@ import { db } from "../config/firebase";
 import { collection, getDocs } from "firebase/firestore";
 import { View } from "react-native-web";
 import { ScrollView } from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+
+
 
 const LeftContent = (props) => <Avatar.Icon {...props} icon="folder" />;
 
@@ -47,14 +50,14 @@ const Task = ({ navigation }) => {
               Editar
             </Button>
             <Button
-            mode="contained"
-            buttonColor="#f50000"
+            style={{alignItems:'center', width:50,height:50,borderRadius:2*70,paddingTop:3}}
+            mode="text"
             textColor="#fff"
               onPress={() => {
                 navigation.navigate("");
               }}
             >
-              Deletar
+              <MaterialCommunityIcons  name="close" size={35}/>
             </Button>
           </Card.Actions>
         </Card>

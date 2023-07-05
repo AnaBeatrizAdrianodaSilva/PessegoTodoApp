@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import {  TextInput, View } from "react-native";
-import { Button,} from "react-native-paper"
+import {   View } from "react-native";
+import { Button, TextInput, } from "react-native-paper"
 import { db } from "../config/firebase";
 import { doc, setDoc } from "firebase/firestore";
 
@@ -38,13 +38,16 @@ const EditTask = ({ navigation, route }) => {
   };
 
   return (
-    <View style={{alignItems:'center',width:300,height:300,backgroundColor:'#f408',borderRadius:7}}>
+      <View style={{justifyContent:'center', alignItems:'center'}}>
+<View style={{width:300,height:220,backgroundColor:'#8202E6',marginTop:150,alignItems:'center',borderRadius:7,paddingTop:20}}>
       <TextInput
+        style={{width:220,height:40,borderRadius:7,marginTop:5}}
         value={title}
         onChangeText={setTitle}
         placeholder="Título da Tarefa"
       />
       <TextInput
+        style={{width:220,height:40,borderRadius:7,marginTop:10}}
         value={content}
         onChangeText={setContent}
         placeholder="Conteúdo da Tarefa"
@@ -54,9 +57,10 @@ const EditTask = ({ navigation, route }) => {
       style={{width:150,marginTop:20}} 
       mode="contained" 
       onPress={handleSave} 
-      buttonColor="#8A02F2"
+      buttonColor="#5F02A6"
       textColor="#fff"
       > Salvar </Button>
+    </View>
     </View>
   );
 };
