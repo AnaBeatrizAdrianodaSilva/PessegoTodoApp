@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Avatar, Button, Card, Text } from "react-native-paper";
 import { db } from "../config/firebase";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
 import { View } from "react-native-web";
 import { ScrollView } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -29,7 +29,7 @@ const Task = ({ navigation }) => {
 
   const deleteTask = async (taskId) => {
     try {
-      await deleteDoc(collection(db, "tasks", taskId));
+      await deleteDoc(doc(db, "Tasks", taskId));
       setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
     } catch (error) {
       console.log("Error deleting task:", error);
