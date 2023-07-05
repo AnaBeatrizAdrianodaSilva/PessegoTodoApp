@@ -27,6 +27,15 @@ const Task = ({ navigation }) => {
     fetchTasks();
   }, []);
 
+  const deleteTask = async (taskId) => {
+    try {
+      await deleteDoc(collection(db, "tasks", taskId));
+      setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
+    } catch (error) {
+      console.log("Error deleting task:", error);
+    }
+  };
+
   return (
   <ScrollView>
     <View>
@@ -53,9 +62,7 @@ const Task = ({ navigation }) => {
             style={{alignItems:'center', width:50,height:50,borderRadius:2*70,paddingTop:3}}
             mode="text"
             textColor="#fff"
-              onPress={() => {
-                navigation.navigate("");
-              }}
+            onPress={() => deleteTask(task.id)}
             >
               <MaterialCommunityIcons  name="close" size={35}/>
             </Button>
