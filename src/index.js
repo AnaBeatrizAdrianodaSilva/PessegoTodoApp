@@ -46,9 +46,17 @@ const Stack = createNativeStackNavigator();
 
 function MyStack() {
   return (
-    <Stack.Navigator screenOptions={{headerStyle:{backgroundColor:'#3A0166',}}}>
-      <Stack.Screen name="HomeScreen" component={HomeScreen} />
-      <Stack.Screen name="EditTask" component={EditTask} />
+    <Stack.Navigator
+      screenOptions={
+        { 
+          headerStyle: { backgroundColor: "#3A0166" },
+          headerTitleStyle: { color: 'white' },
+          headerTintColor: { color: 'white' }
+        }
+      }
+    >
+      <Stack.Screen  name="HomeScreen" component={HomeScreen} ScreenOptions={ {headerTintColor: {color: 'white'}} } />
+      <Stack.Screen name="EditTask" component={EditTask}  />
       <Stack.Screen name="AddTaskScreen" component={AddTaskScreen} />
       <Stack.Screen name="Task" component={Task} />
     </Stack.Navigator>
